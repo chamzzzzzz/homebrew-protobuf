@@ -5,11 +5,6 @@ class ProtobufAT233 < Formula
   sha256 "3a5f47ad3aa10192c5577ff086b24b9739a36937c34ceab6db912a16a3ef7f8e"
   license "BSD-3-Clause"
 
-  livecheck do
-    url :stable
-    strategy :github_latest
-  end
-
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "34a7292702d7d7881a51e91a643751f886caf16f55298a1d9bf712aab23ddbbb"
     sha256 cellar: :any,                 arm64_monterey: "e2080ffdc52c3ceda783bd1add6dc24ee68b955dc814d0d05411c768a42535a3"
@@ -20,17 +15,11 @@ class ProtobufAT233 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0cc5053fb61bc58d4c3bb32724b3c51977e0097872ba60fbeb1d46a292b222ea"
   end
 
-  head do
-    url "https://github.com/protocolbuffers/protobuf.git", branch: "main"
-    depends_on "jsoncpp"
-  end
-
   depends_on "cmake" => :build
   depends_on "python@3.10" => [:build, :test]
   depends_on "python@3.11" => [:build, :test]
   depends_on "abseil"
-  # TODO: Add the dependency below in Protobuf 24+. Also remove `head` block.
-  # TODO: depends_on "jsoncpp"
+  depends_on "jsoncpp"
 
   uses_from_macos "zlib"
 
