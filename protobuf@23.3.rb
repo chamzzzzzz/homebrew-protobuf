@@ -5,16 +5,6 @@ class ProtobufAT233 < Formula
   sha256 "3a5f47ad3aa10192c5577ff086b24b9739a36937c34ceab6db912a16a3ef7f8e"
   license "BSD-3-Clause"
 
-  bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "34a7292702d7d7881a51e91a643751f886caf16f55298a1d9bf712aab23ddbbb"
-    sha256 cellar: :any,                 arm64_monterey: "e2080ffdc52c3ceda783bd1add6dc24ee68b955dc814d0d05411c768a42535a3"
-    sha256 cellar: :any,                 arm64_big_sur:  "721ee01a0f5d281ef504339b5fa6a27d1fdcc145ccff8cf6ef1f185c2d3aab1f"
-    sha256 cellar: :any,                 ventura:        "3e9f9b8e5317114d8dccda4e61b2aa00f91ca621663bc10c18886acc55ad4951"
-    sha256 cellar: :any,                 monterey:       "d529c07b5c32da9f6ce554b254deb080efb3d52afde57ecea86fc0ad38b6aaf2"
-    sha256 cellar: :any,                 big_sur:        "8ea4aec0224f535dbdb15cefb05cfba426ccc5bc79c4fe2a659a8a20cbcb83b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0cc5053fb61bc58d4c3bb32724b3c51977e0097872ba60fbeb1d46a292b222ea"
-  end
-
   depends_on "cmake" => :build
   depends_on "python@3.10" => [:build, :test]
   depends_on "python@3.11" => [:build, :test]
